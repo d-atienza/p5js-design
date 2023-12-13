@@ -1,30 +1,32 @@
-//This is our main javascript file constituting our p5.js sketch.
-//It must be loaded from index.html
-//It assumes that the file "myPalettes.js" has also been loaded
-
-let currentPalette;
-
 function setup() {
-    createCanvas(windowWidth, windowHeight / 2);
-    currentPalette = randomPalette();
-    noStroke();
-    background("white");
+	createCanvas(windowWidth, windowHeight);
+	background(100);
+	frameRate(7)
 }
 
 function draw() {
-    fill(random(currentPalette));
-    const x = random(0, width);
-    const y = random(0, height);
-    circle(x, y, 100);
+	instructions();
+	if (mouseIsPressed){
+		createCircle();
+	} 
 }
 
-function mouseClicked() {
-    background(255);
-    currentPalette = randomPalette();
+function createCircle() {
+	//range of diameter size values
+	let diameterSize = [200, 160, 120, 80, 60];
+	
+	//"randomizing" diameter 
+	//(randomly selecting values from within diameterSize Array)
+	let d = random(diameterSize)  
+	
+	while (d > 0) {
+		fill(random(255));
+		circle(mouseX, mouseY, d);
+		d -= 20;	
+	}
 }
 
-function keyPressed() {
-    if (key === "s") {
-        save("my-p5-screenshot");
-    }
+function instructions() {
+	fill(255);
+	text("click on the screen to create ripples", 10, 15);
 }
