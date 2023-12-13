@@ -13,14 +13,14 @@ function draw() {
 
 function createCircle() {
 	//range of diameter size values
-	let diameterSize = [200, 160, 120, 80, 60];
+	let diameterSize = [280, 240, 200, 160, 120, 80, 60];
 	
 	//"randomizing" diameter 
 	//(randomly selecting values from within diameterSize Array)
 	let d = random(diameterSize)  
 	
 	while (d > 0) {
-		fill(random(255));
+		fill(randomPalette());
 		circle(mouseX, mouseY, d);
 		d -= 20;	
 	}
