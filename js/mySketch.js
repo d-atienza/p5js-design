@@ -1,11 +1,11 @@
 function setup() {
 	createCanvas(windowWidth, windowHeight);
-	background(100);
+	background(255);
+	instructions();
 	frameRate(7)
 }
 
 function draw() {
-	instructions();
 	if (mouseIsPressed){
 		createCircle();
 	} 
@@ -27,6 +27,6 @@ function createCircle() {
 }
 
 function instructions() {
-	fill(255);
+	fill(0);
 	text("click on the screen to create ripples", 10, 15);
 }
