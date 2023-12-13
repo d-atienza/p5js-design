@@ -20,7 +20,7 @@ function createCircle() {
 	let d = random(diameterSize)  
 	
 	while (d > 0) {
-		fill(randomPalette());
+		fill(random(0,235));
 		circle(mouseX, mouseY, d);
 		d -= 20;	
 	}
