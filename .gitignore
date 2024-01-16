@@ -1,1 +1,1 @@
-ignore secret.txt;
+ignore any files having the path or name “secret.txt"
